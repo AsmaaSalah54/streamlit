@@ -1,0 +1,6 @@
+streamlit
+langchain-openai
+langchain-huggingface
+pdf2image
+Pillow
+pandas
