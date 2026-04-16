@@ -1,3 +1,4 @@
+
 import os
 import tempfile
 import base64
@@ -13,7 +14,7 @@ import re
 llm = ChatOpenAI(
     openai_api_key=os.getenv("OPENROUTER_API_KEY"),
     openai_api_base="https://openrouter.ai/api/v1",
-    model="google/gemma-4-26b-a4b-it",
+    model="qwen/qwen3.6-plus",
     temperature=0
 )
 
