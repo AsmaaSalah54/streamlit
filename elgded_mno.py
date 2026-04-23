@@ -1,4 +1,3 @@
-
 import os
 import tempfile
 import base64
@@ -14,7 +13,7 @@ import re
 llm = ChatOpenAI(
     openai_api_key=os.getenv("OPENROUTER_API_KEY"),
     openai_api_base="https://openrouter.ai/api/v1",
-    model="qwen/qwen3.6-plus",
+    model="google/gemma-4-26b-a4b-it",
     temperature=0
 )
 
@@ -85,7 +84,7 @@ def extract_products_only(llm_output):
         return []
     
 def main():
-    st.title("Dynamic PDF-to-JSON Agent")
+    st.title("Procurement Assistant")
 
     uploaded_file = st.file_uploader("Upload PDF", type=["pdf"])
     if uploaded_file is not None:
@@ -97,9 +96,9 @@ def main():
 
         # Convert PDF → Images
         images = pdf_to_images(temp_pdf_path)
-        st.subheader(" Extracted Images")
-        for img in images:
-            st.image(img)
+        # st.subheader(" Extracted Images")
+        # for img in images:
+        #     st.image(img)
 
         # OCR + Dynamic JSON
         st.subheader(" Extracted & Structured JSON")
